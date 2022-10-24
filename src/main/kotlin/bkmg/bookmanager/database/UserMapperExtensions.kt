@@ -1,14 +1,14 @@
 /*
  * Auto-generated file. Created by MyBatis Generator
  */
-package database
+package bkmg.bookmanager.database
 
-import database.UserDynamicSqlSupport.User
-import database.UserDynamicSqlSupport.User.age
-import database.UserDynamicSqlSupport.User.id
-import database.UserDynamicSqlSupport.User.name
-import database.UserDynamicSqlSupport.User.profile
-import database.UserRecord
+import bkmg.bookmanager.database.UserDynamicSqlSupport.User
+import bkmg.bookmanager.database.UserDynamicSqlSupport.User.age
+import bkmg.bookmanager.database.UserDynamicSqlSupport.User.id
+import bkmg.bookmanager.database.UserDynamicSqlSupport.User.name
+import bkmg.bookmanager.database.UserDynamicSqlSupport.User.profile
+import bkmg.bookmanager.database.UserRecord
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
 import org.mybatis.dynamic.sql.util.kotlin.*
 import org.mybatis.dynamic.sql.util.kotlin.mybatis3.*

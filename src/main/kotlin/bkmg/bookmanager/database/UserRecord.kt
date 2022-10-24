@@ -1,7 +1,7 @@
 /*
  * Auto-generated file. Created by MyBatis Generator
  */
-package database
+package bkmg.bookmanager.database
 
 data class UserRecord(
     var id: Int? = null,

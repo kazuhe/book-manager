@@ -18,11 +18,11 @@
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
         <javaModelGenerator
-                targetPackage="database"
+                targetPackage="bkmg.bookmanager.database"
                 targetProject="src/main/kotlin">
         </javaModelGenerator>
         <javaClientGenerator
-                targetPackage="database"
+                targetPackage="bkmg.bookmanager.database"
                 targetProject="src/main/kotlin">
         </javaClientGenerator>
         <table tableName="user"/>
