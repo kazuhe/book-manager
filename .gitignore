@@ -33,6 +33,12 @@ out/
 /nbdist/
 /.nb-gradle/
 
-### Editor directories and files ###
+### VS Code ###
 .vscode/
+
+### Mac ###
 .DS_Store
+
+### Docker ###
+docker/db/**
+docker/redis/**
