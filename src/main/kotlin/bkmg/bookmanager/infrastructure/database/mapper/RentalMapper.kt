@@ -1,9 +1,9 @@
 /*
  * Auto-generated file. Created by MyBatis Generator
  */
-package bkmg.bookmanager.database
+package bkmg.bookmanager.infrastructure.database.mapper
 
-import bkmg.bookmanager.database.UserRecord
+import bkmg.bookmanager.infrastructure.database.record.RentalRecord
 import org.apache.ibatis.annotations.DeleteProvider
 import org.apache.ibatis.annotations.InsertProvider
 import org.apache.ibatis.annotations.Mapper
@@ -21,7 +21,7 @@ import org.mybatis.dynamic.sql.update.render.UpdateStatementProvider
 import org.mybatis.dynamic.sql.util.SqlProviderAdapter
 
 @Mapper
-interface UserMapper {
+interface RentalMapper {
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
     fun count(selectStatement: SelectStatementProvider): Long
 
@@ -29,23 +29,23 @@ interface UserMapper {
     fun delete(deleteStatement: DeleteStatementProvider): Int
 
     @InsertProvider(type=SqlProviderAdapter::class, method="insert")
-    fun insert(insertStatement: InsertStatementProvider<UserRecord>): Int
+    fun insert(insertStatement: InsertStatementProvider<RentalRecord>): Int
 
     @InsertProvider(type=SqlProviderAdapter::class, method="insertMultiple")
-    fun insertMultiple(multipleInsertStatement: MultiRowInsertStatementProvider<UserRecord>): Int
+    fun insertMultiple(multipleInsertStatement: MultiRowInsertStatementProvider<RentalRecord>): Int
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
-    @ResultMap("UserRecordResult")
-    fun selectOne(selectStatement: SelectStatementProvider): UserRecord?
+    @ResultMap("RentalRecordResult")
+    fun selectOne(selectStatement: SelectStatementProvider): RentalRecord?
 
     @SelectProvider(type=SqlProviderAdapter::class, method="select")
-    @Results(id="UserRecordResult", value = [
-        Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
-        Result(column="age", property="age", jdbcType=JdbcType.INTEGER),
-        Result(column="profile", property="profile", jdbcType=JdbcType.VARCHAR)
+    @Results(id="RentalRecordResult", value = [
+        Result(column="book_id", property="bookId", jdbcType=JdbcType.BIGINT, id=true),
+        Result(column="user_id", property="userId", jdbcType=JdbcType.BIGINT),
+        Result(column="rental_datetime", property="rentalDatetime", jdbcType=JdbcType.TIMESTAMP),
+        Result(column="return_deadline", property="returnDeadline", jdbcType=JdbcType.TIMESTAMP)
     ])
-    fun selectMany(selectStatement: SelectStatementProvider): List<UserRecord>
+    fun selectMany(selectStatement: SelectStatementProvider): List<RentalRecord>
 
     @UpdateProvider(type=SqlProviderAdapter::class, method="update")
     fun update(updateStatement: UpdateStatementProvider): Int

@@ -12,19 +12,26 @@
         </commentGenerator>
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://127.0.0.1:3306/example"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/book_manager"
                 userId="root"
                 password="mysql">
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
         <javaModelGenerator
-                targetPackage="bkmg.bookmanager.database"
+                targetPackage="bkmg.bookmanager.infrastructure.database.record"
                 targetProject="src/main/kotlin">
         </javaModelGenerator>
         <javaClientGenerator
-                targetPackage="bkmg.bookmanager.database"
+                targetPackage="bkmg.bookmanager.infrastructure.database.mapper"
                 targetProject="src/main/kotlin">
         </javaClientGenerator>
-        <table tableName="user"/>
+        <table tableName="%">
+            <!-- Override しない場合 String として生成される role_type を domain.enum.RoleType に関連付けて生成する -->
+            <columnOverride column="role_type" typeHandler="org.apache.ibatis.type.EnumTypeHandler"
+                            javaType="bkmg.bookmanager.domain.enum.RoleType"/>
+        </table>
     </context>
 </generatorConfiguration>
